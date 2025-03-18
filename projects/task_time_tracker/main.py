@@ -14,13 +14,19 @@ max_time_task = ""   #name of the most time-consuming task
 most_time_spent = 0  #time spent on the most consuming task
 
 # Start task tracking and ask user for the task name
-while True: 
-    task_name = input("Enter the task name (or type 'quit' to stop):")
+while True:
+    task_name = input("Enter task name (or type 'quit' to stop):")
 
-    #If the user types "quit", exit the loop
-    if task_name.lower() in ['quit', 'q']: 
+    if task_name.lower() == 'quit':
+        #If user types "quit", break out of the loop and stop program
         break
-    
-# Ask user for time spent of the task in minutes
 
-# Calculate total time spent on task and store the time
+# Ask user for time spent of the task in minutes
+    try: 
+        time_spent = int(input(f'How many minutes did you spend on "{task_name}"?'))
+    except ValueError: 
+        # If the user enters a non-numeric value, display an error message and prompt
+        print("Please enter a valid number for the number of minutes")
+        continue
+# Calculate total time spent (total_time) on task and store the time
+    total_time += time_spent
