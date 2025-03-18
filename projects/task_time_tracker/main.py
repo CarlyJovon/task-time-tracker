@@ -30,3 +30,12 @@ while True:
         continue
 # Calculate total time spent (total_time) on task and store the time
     total_time += time_spent
+
+# Check if the current task is the most time-consuming task
+if time_spent > most_time_spent: 
+    most_time_spent = time_spent
+    max_time_task = task_name
+
+# Display current total time spent on task and the most time-consuming task 
+print(f'Total time spent on task: {total_time} minutes')
+print(f'Your most time-consuming task: {max_time_task} with {most_time_spent} minutes')
